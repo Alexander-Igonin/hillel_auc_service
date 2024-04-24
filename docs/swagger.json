@@ -1,0 +1,115 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "hillel auc project.",
+        "title": "AucServiceAPI",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {},
+        "version": "1.0"
+    },
+    "basePath": "/",
+    "paths": {
+        "/auc/delete": {
+            "delete": {
+                "description": "Delete one item",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete one item",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/aucitems.DeleteResponseBody"
+                        }
+                    }
+                }
+            }
+        },
+        "/auc/item/:id": {
+            "get": {
+                "description": "Show one item",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Show one item",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/aucitems.GetResponseBody"
+                        }
+                    }
+                }
+            }
+        },
+        "/auc/list": {
+            "get": {
+                "description": "Show list of items",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Show list of items",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/aucitems.ListResponseBody"
+                        }
+                    }
+                }
+            }
+        },
+        "/auc/new": {
+            "post": {
+                "description": "Add an item to the auc",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Add an item",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/aucitems.AddResponseBody"
+                        }
+                    }
+                }
+            }
+        },
+        "/auc/update": {
+            "put": {
+                "description": "Update one item",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update one item",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/aucitems.UpdateResponseBody"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "aucitems.AddResponseBody": {
+            "type": "object"
+        },
+        "aucitems.DeleteResponseBody": {
+            "type": "object"
+        },
+        "aucitems.GetResponseBody": {
+            "type": "object"
+        },
+        "aucitems.ListResponseBody": {
+            "type": "object"
+        },
+        "aucitems.UpdateResponseBody": {
+            "type": "object"
+        }
+    }
+}

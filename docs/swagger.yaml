@@ -1,0 +1,75 @@
+basePath: /
+definitions:
+  aucitems.AddResponseBody:
+    type: object
+  aucitems.DeleteResponseBody:
+    type: object
+  aucitems.GetResponseBody:
+    type: object
+  aucitems.ListResponseBody:
+    type: object
+  aucitems.UpdateResponseBody:
+    type: object
+info:
+  contact: {}
+  description: hillel auc project.
+  termsOfService: http://swagger.io/terms/
+  title: AucServiceAPI
+  version: "1.0"
+paths:
+  /auc/delete:
+    delete:
+      description: Delete one item
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/aucitems.DeleteResponseBody'
+      summary: Delete one item
+  /auc/item/:id:
+    get:
+      description: Show one item
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/aucitems.GetResponseBody'
+      summary: Show one item
+  /auc/list:
+    get:
+      description: Show list of items
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/aucitems.ListResponseBody'
+      summary: Show list of items
+  /auc/new:
+    post:
+      description: Add an item to the auc
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/aucitems.AddResponseBody'
+      summary: Add an item
+  /auc/update:
+    put:
+      description: Update one item
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/aucitems.UpdateResponseBody'
+      summary: Update one item
+swagger: "2.0"
