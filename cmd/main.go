@@ -1,6 +1,7 @@
 package main
 
 import (
+	"hillel_go_auc/clients"
 	"hillel_go_auc/config"
 	"hillel_go_auc/docs"
 	"hillel_go_auc/server/handlers"
@@ -24,7 +25,8 @@ func main() {
 	}
 
 	server := echo.New()
-	handlers := handlers.NewHandlers()
+	clients := clients.NewClients()
+	handlers := handlers.NewHandlers(clients)
 	handlers.RegisterRouts(server)
 
 	err = server.Start(cfg.Port)

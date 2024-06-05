@@ -1,4 +1,4 @@
-package aucitems
+package users
 
 import "hillel_go_auc/clients"
 

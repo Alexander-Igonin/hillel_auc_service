@@ -14,7 +14,7 @@ type AddUserRequestBody struct {
 
 type AddUserResponseBody struct{}
 
-func AddUserHandler(ctx echo.Context) error {
+func (h *Handler) AddUserHandler(ctx echo.Context) error {
 	user := AddUserRequestBody{}
 	err := ctx.Bind(&user)
 	if err != nil {
