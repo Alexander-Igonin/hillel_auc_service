@@ -4,7 +4,7 @@ import (
 	"hillel_go_auc/clients"
 	"hillel_go_auc/config"
 	"hillel_go_auc/docs"
-	"hillel_go_auc/server/handlers"
+	"hillel_go_auc/handlers"
 
 	"github.com/labstack/echo/v4"
 	"github.com/sirupsen/logrus"

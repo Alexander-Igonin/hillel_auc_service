@@ -3,5 +3,13 @@ CREATE TABLE if NOT EXISTS users (
     name_full VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL,
     phone VARCHAR(50) NOT NULL,
+    user_password VARCHAR(50) NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE if NOT EXISTS items (
+    id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL,
+    item_name VARCHAR(50) NOT NULL,
+    price INT NOT NULL
 );
