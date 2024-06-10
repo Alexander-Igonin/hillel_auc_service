@@ -27,10 +27,10 @@ func (h *Handler) GetItemsListHandler(ctx echo.Context) error {
 	}
 	defer rows.Close()
 
-	var items []ListResponseBody
+	items := []ListResponseBody{}
 
 	for rows.Next() {
-		var item ListResponseBody
+		item := ListResponseBody{}
 		if err := rows.Scan(&item.ID, &item.UserID, &item.Name, &item.Price); err != nil {
 			return fmt.Errorf("failed to scan item: %w", err)
 		}

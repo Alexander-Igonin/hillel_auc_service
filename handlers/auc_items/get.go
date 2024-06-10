@@ -26,7 +26,7 @@ func (h *Handler) GetItemHandler(ctx echo.Context) error {
 
 	row := h.clients.Postgres.QueryRow(`SELECT * FROM items WHERE id=$1;`, itemID)
 
-	var item GetResponseBody
+	item := GetResponseBody{}
 
 	err := row.Scan(&item.ID, &item.UserID, &item.Name, &item.Price)
 	if err == sql.ErrNoRows {

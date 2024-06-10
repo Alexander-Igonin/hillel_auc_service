@@ -8,8 +8,6 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-type AddResponseBody struct{}
-
 // AddItemHandler godoc
 // @Summary Add an item
 // @Description Add an item to the auc
@@ -30,8 +28,7 @@ func (h *Handler) AddItemHandler(ctx echo.Context) error {
 
 	_, err = h.clients.Postgres.Exec(sqlStatement, item.UserID, item.Name, item.Price)
 	if err != nil {
-		panic(err)
-		// user with this id does not exists
+		return fmt.Errorf("failed to add item: %w", err)
 	}
 
 	return ctx.JSON(http.StatusOK, item)

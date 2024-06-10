@@ -7,8 +7,6 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-type DeleteResponseBody struct{}
-
 // DeleteItemHandler godoc
 // @Summary Delete one item
 // @Description Delete one item

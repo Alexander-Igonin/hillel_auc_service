@@ -22,7 +22,7 @@ func (h *Handler) AddUserHandler(ctx echo.Context) error {
 
 	_, err = h.clients.Postgres.Exec(sqlStatement, user.NameFull, user.Email, user.Phone, user.Password)
 	if err != nil {
-		panic(err)
+		return fmt.Errorf("failed to add new user: %w", err)
 	}
 
 	return ctx.JSON(http.StatusOK, user)
